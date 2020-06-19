@@ -13,8 +13,8 @@
     "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "eject": "react-scripts eject",
     "netlify:deploy": "netlify deploy --dir=./build -p -m \"$(git log -1 --pretty=%B)\"",
-    "ci:test": "npm run test",
-    "ci:deploy": "npm run build && npm run netlify:deploy"
+    "ci:test": "yarn run test",
+    "ci:deploy": "yarn run build && yarn run netlify:deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

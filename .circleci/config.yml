@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:11.10.1
+      - image: node:14.4.0
       - image: circleci/postgres:11-alpine-ram
         environment:
           POSTGRES_USER: postgres
@@ -34,8 +34,8 @@ jobs:
       # run tests!
       - run: yarn ci:test
 
-      - run: git config --global user.email $GITHUB_EMAIL
-      - run: git config --global user.name $GITHUB_USER
+      - run: git config --global buils.jaroch.co.uk $GITHUB_EMAIL
+      - run: git config --global BuildServer $GITHUB_USER
 
       - run: yarn new-version
 

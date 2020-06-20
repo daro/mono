@@ -55,17 +55,6 @@ object Build : BuildType({
 
     steps {
         script {
-            name = "Test"
-            scriptContent = """
-                #!/bin/bash 
-                set -e -x
-                yarn 
-                yarn test-ci
-                yarn build
-            """.trimIndent()
-            dockerImage = "node:latest"
-        }
-        script {
             name = "Test (1)"
             scriptContent = """
                 #!/bin/bash 

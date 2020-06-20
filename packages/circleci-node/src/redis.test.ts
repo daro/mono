@@ -6,7 +6,8 @@ describe("redis tests", () => {
   //
   //   await redis.ping();
   // });
-    it("ping", async () => {
-
+    it("ping",  () => {
+            const p = 5;
+            expect(p).toBe(5)
     });
 });

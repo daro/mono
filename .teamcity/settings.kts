@@ -61,14 +61,6 @@ object Build : BuildType({
                 }
             }
         }
-        step {
-            name = "test node (1)"
-            type = "jonnyzzz.yarn"
-            param("yarn_commands", """
-                install
-                test
-            """.trimIndent())
-        }
     }
 
     triggers {

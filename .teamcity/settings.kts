@@ -1,6 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCompose
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -61,9 +60,6 @@ object Build : BuildType({
                     path = "packages/circleci-node/Dockerfile"
                 }
             }
-        }
-        dockerCompose {
-            file = "packages/circleci-node/docker-compose.yml"
         }
         step {
             name = "test node (1)"

@@ -56,6 +56,7 @@ object Build : BuildType({
 
     steps {
         script {
+            name = "Test"
             scriptContent = """
                 #!/bin/bash 
                 set -e -x

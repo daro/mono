@@ -55,13 +55,6 @@ object Build : BuildType({
     }
 
     steps {
-        dockerCommand {
-            commandType = build {
-                source = file {
-                    path = "packages/circleci-node/Dockerfile"
-                }
-            }
-        }
         script {
             scriptContent = """
                 #!/bin/bash 
@@ -71,6 +64,13 @@ object Build : BuildType({
                 yarn build
             """.trimIndent()
             dockerImage = "node:latest"
+        }
+        dockerCommand {
+            commandType = build {
+                source = file {
+                    path = "packages/circleci-node/Dockerfile"
+                }
+            }
         }
     }
 

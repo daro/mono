@@ -6,4 +6,7 @@ describe("redis tests", () => {
   //
   //   await redis.ping();
   // });
+    it("ping", async () => {
+
+    });
 });

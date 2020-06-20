@@ -70,6 +70,14 @@ object Build : BuildType({
         dockerCompose {
             file = "packages/circleci-node/docker-compose.yml"
         }
+        step {
+            name = "test node (1)"
+            type = "jonnyzzz.yarn"
+            param("yarn_commands", """
+                install
+                test
+            """.trimIndent())
+        }
     }
 
     triggers {

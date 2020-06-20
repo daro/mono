@@ -10,4 +10,7 @@ describe("db tests", () => {
   //   user.age = 25;
   //   await connection.manager.save(user);
   // });
+    it("create user", async () => {
+    });
+
 });

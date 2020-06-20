@@ -1,5 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
@@ -66,12 +65,15 @@ object Build : BuildType({
             """.trimIndent()
             dockerImage = "node:latest"
         }
-        dockerCommand {
-            commandType = build {
-                source = file {
-                    path = "packages/circleci-node/Dockerfile"
-                }
-            }
+        script {
+            name = "Test (1)"
+            scriptContent = """
+                #!/bin/bash 
+                set -e -x
+                yarn 
+                yarn ci:test
+            """.trimIndent()
+            dockerImage = "node:latest"
         }
     }
 

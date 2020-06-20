@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -60,6 +61,16 @@ object Build : BuildType({
                     path = "packages/circleci-node/Dockerfile"
                 }
             }
+        }
+        script {
+            scriptContent = """
+                #!/bin/bash 
+                set -e -x
+                yarn 
+                yarn test-ci
+                yarn build
+            """.trimIndent()
+            dockerImage = "node:latest"
         }
     }
 

@@ -47,7 +47,7 @@ project {
 }
 
 object Build : BuildType({
-    name = "Build"
+    name = "Develop  to staging server"
 
     vcs {
         root(DslContext.settingsRoot)

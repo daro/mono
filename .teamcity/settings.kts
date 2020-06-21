@@ -49,6 +49,8 @@ project {
 object Build : BuildType({
     name = "Develop  to staging server"
 
+    publishArtifacts = PublishMode.SUCCESSFUL
+
     vcs {
         root(DslContext.settingsRoot)
     }

@@ -1,13 +1,13 @@
 {
-  "name": "circleci-monorepo",
+  "name": "booking-system",
   "private": true,
   "version": "1.0.0",
   "devDependencies": {
     "lerna": "^3.13.1"
   },
   "scripts": {
-    "ci:test": "lerna run ci:test",
-    "ci:deploy": "lerna run ci:deploy --since $TAG",
+    "test": "lerna run build:test",
+    "deploy": "lerna run build:deploy --since $TAG",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "workspaces": {
